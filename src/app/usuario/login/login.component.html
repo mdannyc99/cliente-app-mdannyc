@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="card" style="width: 35%;">
+            <div class="card-header">
+                <h2>Inicio de sesión</h2>
+            </div>
+            <div class="card-body">
+                <form (ngSubmit)="login()">
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="log">Email</label>
+                        <input name="email" type="email" id="log" class="form-control" [(ngModel)]="usuario.username" required />
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="pass">Contraseña</label>
+                        <input name="password" type="password" id="pass" class="form-control" [(ngModel)]="usuario.password" required />
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-lg btn-primary btn-block mb-4">Entrar</button>
+
+                    <!-- Register buttons
+                    <div class="text-center">
+                      <p>Not a member? <a href="#!">Register</a></p>
+                    </div>
+                    -->
+                  </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

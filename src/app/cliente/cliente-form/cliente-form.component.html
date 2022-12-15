@@ -1,0 +1,97 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Nuevo cliente</h2>
+  </div>
+  <div class="card-body">
+    <div class="row justify-content-md-center">
+      <form #clienteForm="ngForm">
+
+        <div class="row">
+          <div class="col-md 6">
+            <div class="form-group row mt-3">
+              <label class="col-sm-2 col-form-label">Nombre</label>
+              <div class="col-sm-10">
+                <input  type="text" class="form-control" name="nombre" placeholder="Nombre" [(ngModel)]="clienteNew.nombre">
+              </div>
+            </div>
+          </div>
+          <div class="col-md 6">
+            <div class="form-group row mt-3">
+              <label class="col-sm-2 col-form-label">Apellidos</label>
+              <div class="col-sm-10">
+                <input  type="text" class="form-control" name="apellidos" placeholder="Apellidos" [(ngModel)]="clienteNew.apellido">
+              </div>
+          </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md 6">
+            <div class="form-group row mt-3">
+              <label class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input  type="text" class="form-control" name="email" placeholder="Email" [(ngModel)]="clienteNew.email">
+              </div>
+          </div>
+          </div>
+          <div class="col-md 6">
+            <div class="form-group row mt-3">
+              <label class="col-sm-2 col-form-label">Teléfono</label>
+              <div class="col-sm-10">
+                <input  type="text" class="form-control" name="telefono" placeholder="Teléfono" [(ngModel)]="clienteNew.telefono">
+              </div>
+          </div>
+          </div>
+
+        </div>
+
+        <hr>
+        <div class="row">
+          <div class="col-md 6">
+            <div class="form-group row mt-1">
+              <label class="col-sm-2 col-form-label">Región</label>
+              <div class="col-sm-10">
+                <select [compareWith]="compararRegion" class="form-select" name="region" style="width: 500;" [(ngModel)]="clienteNew.region">
+                  <option [ngValue]="undefined">---Eliga una region---</option>
+                  <option *ngFor="let item of regiones" [ngValue]="item" >{{item.name}}</option>
+                </select>
+              </div>
+
+          </div>
+          </div>
+          <div class="col-md 6">
+
+          </div>
+        </div>
+
+        <hr>
+
+
+
+
+
+
+
+
+
+
+        <!--
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Imagen</label>
+            <div class="col-sm-10">
+              <input type="file" class="form-control">
+            </div>
+        </div>
+        -->
+
+        <button class="btn btn-secondary m-2" routerLink="">Volver</button>
+
+        <button *ngIf="!clienteNew.id" type="submit" class="btn btn-success m-2" (click)="guardarCliente()">Guardar</button>
+
+        <button *ngIf="clienteNew.id" type="submit" class="btn btn-success m-2" (click)="editarCliente()">Editar</button>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+

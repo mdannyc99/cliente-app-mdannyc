@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2>Lista productos</h2>
+    </div>
+    <div class="card body">
+      <table class="table mt-3">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of productos">
+            <td>{{item.id}}</td>
+            <td>{{item.nombre}}</td>
+            <td *ngIf="this.servicioUsuario.token">
+                <a class="btn btn-primary m-1" routerLink="/producto/edit/{{item.id}}">Edit</a>
+                <a class="btn btn-danger m-1" (click)="borrarProducto(item)">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

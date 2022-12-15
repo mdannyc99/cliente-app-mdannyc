@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Nuevo producto</h2>
+  </div>
+  <div class="card-body">
+    <div class="row justify-content-md-center">
+      <form #clienteForm="ngForm">
+
+        <div class="row">
+          <div class="col-md 6">
+            <div class="form-group row mt-3">
+              <label class="col-sm-2 col-form-label">Nombre del producto</label>
+              <div class="col-sm-10">
+                <input  type="text" class="form-control" name="nombre" placeholder="Nombre" [(ngModel)]="productoNew.nombre">
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-secondary m-2" routerLink="/productos">Volver</button>
+        <button *ngIf="!productoNew.id" type="submit" class="btn btn-success m-2" (click)="guardarProducto()">Guardar</button>
+        <button *ngIf="productoNew.id" type="submit" class="btn btn-success m-2" (click)="editarProducto()">Editar</button>
+      </form>
+    </div>
+  </div>
+</div>

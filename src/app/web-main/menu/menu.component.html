@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-info p-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><h3>TIENDA ONLINE</h3></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="productos"><h4>Productos</h4></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink=""><h4>Clientes</h4></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="cliente/new"><h4>Nuevo cliente</h4></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="producto/new"><h4>Nuevo producto</h4></a>
+        </li>
+        <li class="nav-item" *ngIf="!servicioUsuario.token; else cerrar">
+          <a class="btn" routerLink="login"><b class="text-success"><h4>Login</h4></b></a>
+        </li>
+
+        <ng-template #cerrar>
+          <a class="btn" (click)="logOut()"><b class="text-danger"><h4>Log out</h4></b></a>
+        </ng-template>
+      </ul>
+      <ul class="navbar-nav ms-auto d-none d-lg-inline-flex">
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
